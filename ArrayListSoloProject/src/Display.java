@@ -13,12 +13,34 @@ public class Display
 					initialInput2 = initialInput.nextLine();
 					Candidates.People();
 					input();
-				
+				//
 				
 				
 
 			}
-
+		public static void redo(){
+			System.out.println("Hopefully, one of these choices are better!");
+			Candidates.printJenn();
+			Candidates.printMadison();
+			Candidates.printJennifer();
+			Candidates.printKatarina();
+			Candidates.printRebecca();
+			System.out.println("Which one would you choose?");
+			System.out.println("If you would like to go back, please type 'Go Back'");
+			Scanner input = new Scanner(System.in);
+			String input2 = input.nextLine();
+			if(input2.equals("Go Back") || input2.equals("go back") || input2.equals("go Back")){
+				System.out.println("Your choices are : Age, Height, or Location");
+				Scanner initialInput = new Scanner(System.in);
+				initialInput2 = initialInput.nextLine();
+				input();
+				
+			}
+			
+			
+		}
+		
+			
 		public static void input(){
 			//			 _
 			//		   // \\
@@ -35,15 +57,37 @@ public class Display
 				if(ageInput2 > 30){
 					System.out.println("Your choices are : " );
 					System.out.println("________________");
+					
 					Candidates.printSamantha();
 					Candidates.printMaddy();
 					Candidates.printMarsha();
+					
+					System.out.println("Which one would you like to go on a date with? ");
+					
+					
+					System.out.println("If none, please type 'None' ");
+					
+					Scanner input = new Scanner(System.in);
+					String input2 = input.nextLine();
+					if(input2.equals("None") || input2.equals("none")){
+						redo();
+						
+					}
 			}	else if(ageInput2 < 30){
 				
 					System.out.println("Your choices are : ");
 					System.out.println("________________");
+					
 					Candidates.printJean();
 					Candidates.printBrooke();		
+					
+					System.out.println("Which one would you like to go on a date with? ");
+					System.out.println("If none, please type 'None' ");
+					Scanner input = new Scanner(System.in);
+					String input2 = input.nextLine();
+					if(input2.equals("None") || input2.equals("none")){
+						redo();
+					}
 			}	
 				
 		}
@@ -72,6 +116,11 @@ public class Display
 						System.out.println("Which one would you like to go on a date with? ");
 						System.out.println("If none, please type 'None' ");
 						Scanner input = new Scanner(System.in);
+						String input2 = input.nextLine();
+						if(input2.equals("None") || input2.equals("none")){
+							redo();
+							
+						}
 						
 					}
 					
@@ -80,6 +129,21 @@ public class Display
 				
 			}
 			
+		if(initialInput2.equals("Location")){
+			System.out.println("Your options for location are : ");
+			Candidates.printLocations();
+			System.out.println("Which of these locations are satisfactory? ");
+			Scanner locationInput = new Scanner(System.in);
+			String locationInput2 = locationInput.nextLine();
+			for(Choice C : Candidates.Choices){
+				if(C.getLocation().equals(locationInput2)){
+					
+					
+				}
+					
+				
+			}
+		}
 			
 	}
 				
